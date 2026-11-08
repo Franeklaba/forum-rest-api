@@ -1,5 +1,8 @@
-package com.example.project_spring;
+package com.example.project_spring.comment.service;
 
+import com.example.project_spring.comment.entity.Comment;
+import com.example.project_spring.comment.repository.CommentRepository;
+import com.example.project_spring.post.entity.Post;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;

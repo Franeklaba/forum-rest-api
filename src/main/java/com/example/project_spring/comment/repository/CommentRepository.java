@@ -1,5 +1,7 @@
-package com.example.project_spring;
+package com.example.project_spring.comment.repository;
 
+import com.example.project_spring.comment.entity.Comment;
+import com.example.project_spring.post.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

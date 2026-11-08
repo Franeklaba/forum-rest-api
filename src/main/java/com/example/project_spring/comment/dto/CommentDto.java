@@ -1,4 +1,4 @@
-package com.example.project_spring;
+package com.example.project_spring.comment.dto;
 
 import lombok.Builder;
 import java.util.UUID;
@@ -7,11 +7,11 @@ import java.util.UUID;
 public record CommentDto(
         UUID commentId,
         String authorName,
-        String Content,
+        String content,
         String postTitle
 ) implements Comparable<CommentDto> {
     @Override
-    public int compareTo(CommentDto o){
+    public int compareTo(CommentDto o) {
         return this.authorName.compareTo(o.authorName);
     }
 }

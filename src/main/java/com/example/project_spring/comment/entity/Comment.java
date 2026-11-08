@@ -1,5 +1,6 @@
-package com.example.project_spring;
+package com.example.project_spring.comment.entity;
 
+import com.example.project_spring.post.entity.Post;
 import jakarta.persistence.*;
 import lombok.*;
 import java.io.Serializable;

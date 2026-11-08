@@ -1,5 +1,9 @@
-package com.example.project_spring;
+package com.example.project_spring.cmd;
 
+import com.example.project_spring.comment.entity.Comment;
+import com.example.project_spring.comment.service.CommentService;
+import com.example.project_spring.post.entity.Post;
+import com.example.project_spring.post.service.PostService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.core.annotation.Order;

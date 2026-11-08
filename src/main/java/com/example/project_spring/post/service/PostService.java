@@ -1,5 +1,7 @@
-package com.example.project_spring;
+package com.example.project_spring.post.service;
 
+import com.example.project_spring.post.entity.Post;
+import com.example.project_spring.post.repository.PostRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
