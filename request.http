@@ -1,0 +1,91 @@
+### 1.1. Create a new Post (201 Created)
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Architektury Usług Internetowych - Lab 3",
+  "content": "Testowanie kontrolerów REST za pomocą pliku request.http."
+}
+
+> {%
+    client.global.set("postId", response.body.postId);
+%}
+
+### 1.2. Get the created Post by ID (200 OK)
+GET http://localhost:8080/api/posts/{{postId}}
+Accept: application/json
+
+### 1.3. Get a non-existent Post by ID (404 Not Found)
+GET http://localhost:8080/api/posts/00000000-0000-0000-0000-000000000000
+Accept: application/json
+
+### 1.4. Update the existing Post (200 OK)
+PUT http://localhost:8080/api/posts/{{postId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Architektury Usług Internetowych - Lab 3 (Zaktualizowany)",
+  "content": "Zaktualizowana treść posta po wywołaniu metody PUT."
+}
+
+### 1.5. Verify the updated Post (200 OK)
+GET http://localhost:8080/api/posts/{{postId}}
+Accept: application/json
+
+### 2.1. Create a new Comment under the Post (201 Created)
+POST http://localhost:8080/api/posts/{{postId}}/comments
+Content-Type: application/json
+Accept: application/json
+
+{
+  "authorName": "Jan Kowalski",
+  "content": "Pierwszy komentarz testowy dodany przez REST API."
+}
+
+> {%
+    client.global.set("commentId", response.body.commentId);
+%}
+
+### 2.2. Create a Comment under a non-existent Post (404 Not Found)
+POST http://localhost:8080/api/posts/00000000-0000-0000-0000-000000000000/comments
+Content-Type: application/json
+Accept: application/json
+
+{
+  "authorName": "Jan Kowalski",
+  "content": "Ten komentarz nie powinien zostać utworzony."
+}
+
+### 2.3. Get the created Comment by ID (200 OK)
+GET http://localhost:8080/api/posts/{{postId}}/comments/{{commentId}}
+Accept: application/json
+
+### 2.4. Update the existing Comment (200 OK)
+PUT http://localhost:8080/api/posts/{{postId}}/comments/{{commentId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "authorName": "Jan Kowalski (Edytowany)",
+  "content": "Zaktualizowana treść komentarza po wywołaniu metody PUT."
+}
+
+### 2.5. Verify the updated Comment (200 OK)
+GET http://localhost:8080/api/posts/{{postId}}/comments/{{commentId}}
+Accept: application/json
+
+### 2.6. Delete the Comment (204 No Content)
+DELETE http://localhost:8080/api/posts/{{postId}}/comments/{{commentId}}
+
+### 2.7. Verify the Comment was deleted (404 Not Found)
+GET http://localhost:8080/api/posts/{{postId}}/comments/{{commentId}}
+Accept: application/json
+
+### 3.1. Delete the Post (204 No Content)
+DELETE http://localhost:8080/api/posts/{{postId}}
+
+### 3.2. Verify the Post was deleted (404 Not Found)
+GET http://localhost:8080/api/posts/{{postId}}
+Accept: application/json

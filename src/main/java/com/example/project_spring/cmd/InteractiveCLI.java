@@ -5,12 +5,14 @@ import com.example.project_spring.comment.service.CommentService;
 import com.example.project_spring.post.entity.Post;
 import com.example.project_spring.post.service.PostService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 import java.util.UUID;
 
 @Component
+@Profile("cli")
 public class InteractiveCLI implements CommandLineRunner {
 
     private final PostService postService;

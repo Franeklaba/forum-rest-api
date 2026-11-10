@@ -1,6 +1,7 @@
 package com.example.project_spring.comment.dto;
 
 import lombok.Builder;
+import lombok.Getter;
 
 @Builder
 public record CommentCreateUpdateDto(
