@@ -7,8 +7,7 @@ import java.util.UUID;
 public record CommentDto(
         UUID commentId,
         String authorName,
-        String content,
-        String postTitle
+        String content
 ) implements Comparable<CommentDto> {
     @Override
     public int compareTo(CommentDto o) {

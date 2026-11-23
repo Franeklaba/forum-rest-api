@@ -19,7 +19,6 @@ public class CommentMapper {
                 .commentId(comment.getCommentId())
                 .authorName(comment.getAuthorName())
                 .content(comment.getContent())
-                .postTitle(comment.getCommentsPost() != null ? comment.getCommentsPost().getTitle() : null)
                 .build();
     }
 

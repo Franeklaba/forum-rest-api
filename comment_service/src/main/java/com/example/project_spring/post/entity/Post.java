@@ -22,12 +22,6 @@ public class Post implements Comparable<Post>, Serializable {
     @Column(name = "post_id")
     private UUID postId;
 
-    @Column(name = "title")
-    private String title;
-
-    @Column(name = "content")
-    private String content;
-
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @Builder.Default
