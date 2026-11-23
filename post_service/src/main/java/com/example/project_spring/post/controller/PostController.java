@@ -39,7 +39,7 @@ public class PostController {
     public ResponseEntity<PostDto> updatePost(@PathVariable UUID postId, @RequestBody PostCreateUpdateDto updatedPostData) {
         return postService.findById(postId)
                 .map(post -> {
-                    Post savedPost = postService.save(postMapper.updateEntity(updatedPostData, post));
+                    Post savedPost = postService.update(postMapper.updateEntity(updatedPostData, post));
                     return ResponseEntity.ok(postMapper.toDto(savedPost));
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());

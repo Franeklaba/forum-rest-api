@@ -1,9 +1,6 @@
 package com.example.project_spring.post.entity;
 
-import com.example.project_spring.comment.entity.Comment;
 import jakarta.persistence.*;
-import java.util.List;
-import java.util.ArrayList;
 import lombok.*;
 import java.io.Serializable;
 import java.util.UUID;
@@ -27,12 +24,6 @@ public class Post implements Comparable<Post>, Serializable {
 
     @Column(name = "content")
     private String content;
-
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    @Builder.Default
-    @OneToMany(mappedBy = "commentsPost", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Comment> commentList = new ArrayList<>();
 
     @Override
     public int compareTo(Post o) {
